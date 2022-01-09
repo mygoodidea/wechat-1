@@ -2,6 +2,7 @@ package miniprogram
 
 import (
 	"github.com/silenceper/wechat/v2/credential"
+	"github.com/silenceper/wechat/v2/miniprogram/activity"
 	"github.com/silenceper/wechat/v2/miniprogram/analysis"
 	"github.com/silenceper/wechat/v2/miniprogram/auth"
 	"github.com/silenceper/wechat/v2/miniprogram/config"
@@ -101,4 +102,9 @@ func (miniProgram *MiniProgram) GetURLLink() *urllink.URLLink {
 // GetShortLink 小程序短链接口
 func (miniProgram *MiniProgram) GetShortLink() *shortlink.ShortLink {
 	return shortlink.NewShortLink(miniProgram.ctx)
+}
+
+//GetActivity 小程序动态消息接口
+func (miniProgram *MiniProgram) GetActivity() *activity.Activity {
+	return activity.NewActivity(miniProgram.ctx)
 }
